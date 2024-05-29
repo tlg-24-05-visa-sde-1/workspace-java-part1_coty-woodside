@@ -68,4 +68,8 @@ class Calculator {
         double result = Calculator.average(3, 5, 10, 13);
         System.out.println("The average is: " + avg);
     }
+
+    public static double average() {
+       return average(3, 5, 10, 13);
+    }
 }
