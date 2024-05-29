@@ -27,6 +27,7 @@ public class IRS {
     // helper method to add a TaxPayer to the array
     // what types of objects can be passed to this method?
     public void register(TaxPayer payer) {
+
         payers[currentIndex++] = payer;
     }
 }

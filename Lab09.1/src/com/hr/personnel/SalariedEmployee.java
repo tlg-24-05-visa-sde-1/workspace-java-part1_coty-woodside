@@ -1,5 +1,7 @@
 package com.hr.personnel;
 
+import gov.irs.TaxPayer;
+
 import java.time.LocalDate;
 
 public class SalariedEmployee extends Employee {
@@ -27,6 +29,12 @@ public class SalariedEmployee extends Employee {
     public void takeVacation(){
         System.out.println( getName() + " is taking vacation");
     }
+
+    public void payTaxes() {
+        System.out.println(getName() + " paid taxes " + (SALARIED_TAX_RATE*getSalary()));
+    }
+
+
 
     //accessor methods
     public double getSalary() {
