@@ -1,12 +1,10 @@
 package com.hr.personnel;
 
-import gov.irs.TaxPayer;
-
 import java.time.LocalDate;
 
 public class SalariedEmployee extends Employee {
     private double salary;
-
+    private double DEFAULT_STANDARD_DEDUCTION = 10_070.0;
     public SalariedEmployee() {
         super();
     }
@@ -35,6 +33,9 @@ public class SalariedEmployee extends Employee {
     }
 
 
+    public double getStandardDeduction(){
+        return DEFAULT_STANDARD_DEDUCTION;
+    }
 
     //accessor methods
     public double getSalary() {
