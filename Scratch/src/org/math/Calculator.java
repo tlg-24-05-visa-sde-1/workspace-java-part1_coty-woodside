@@ -71,5 +71,6 @@ class Calculator {
 
     public static double average() {
        return average(3, 5, 10, 13);
+
     }
 }
