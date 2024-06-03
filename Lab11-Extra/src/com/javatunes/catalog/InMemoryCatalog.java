@@ -16,7 +16,7 @@ import java.util.List;
 // Your first job is to fulfill the contract that this class has signed.
 public class InMemoryCatalog implements Catalog {
 
-    private List<MusicItem> catalogData = new ArrayList<>(List.of(
+    private final List<MusicItem> catalogData = new ArrayList<>(List.of(
                    /* id    title                        artist                       releaseDate  price  musicCategory */
         new MusicItem(1L,  "Diva",                      "Annie Lennox",              "1992-01-04", 13.99, MusicCategory.POP),
         new MusicItem(2L,  "Dream of the Blue Turtles", "Sting",                     "1985-02-05", 14.99, MusicCategory.POP),
@@ -37,6 +37,50 @@ public class InMemoryCatalog implements Catalog {
         new MusicItem(17L, "1984",                      "Van Halen",                 "1984-08-19", 11.97, MusicCategory.ROCK),
         new MusicItem(18L, "Escape",                    "Journey",                   "1981-02-25", 11.97, MusicCategory.CLASSIC_ROCK))
     );
+
+
+
+    // Contract Methods - specified in Catalog interface and implemented here
+
+    @Override
+    public MusicItem findById(Long id) {
+        MusicItem item = null;
+
+        for (MusicItem currentItem : catalogData) {
+            if (currentItem.getId().equals(id)){
+                item = currentItem;
+            }
+        }
+        return item;
+    }
+
+    @Override
+    public Collection<MusicItem> findByKeyword(String keyword) {
+        return List.of();
+    }
+
+    @Override
+    public Collection<MusicItem> findByCategory(MusicCategory category) {
+        Collection<MusicItem> result = new ArrayList<>();
+
+        for (MusicItem item : catalogData) {
+            if (item.getMusicCategory().equals(category)) {
+                result.add(item);
+            }
+        }
+        return result;
+
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Collection<MusicItem> getAll() {
+        return List.of();
+    }
 
 
     /**
@@ -66,20 +110,52 @@ public class InMemoryCatalog implements Catalog {
      * For example, Madonna's first album is simply titled, "Madonna."
      */
 
+    public Collection<MusicItem> findSelfTitled() {
+        Collection<MusicItem> result = new ArrayList<>();
+
+        for (MusicItem item : catalogData) {
+            if (item.getTitle().equals(item.getArtist())) {
+                result.add(item);
+            }
+        }
+        return result;
+
+    }
 
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
      */
+    public Collection<MusicItem> cheapRock(double price) {
+        Collection<MusicItem> result = new ArrayList<>();
+        for(MusicItem item : catalogData) {
+            if(item.getMusicCategory().equals(MusicCategory.ROCK) && item.getPrice()< price){
+            result.add(item);
+            }
+        }
 
+        return result;
+    }
 
     /**
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
 
+    public int genreCount(MusicCategory category) {
+        int count=0;
+        for (MusicItem item : catalogData) {
+            if (item.getMusicCategory().equals(category)) {
+                count++;
+            }
+        }
+        return count;
+    }
 
     /**
      * TASK: determine average price of our low-cost, extensive catalog of music.
      */
+    public double averagePrice() {
+        return 0.0;
+    }
 
 
     /**
