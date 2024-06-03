@@ -8,7 +8,7 @@ public class Circle implements Shape {
     }
     @Override
     public double getArea() {
-        return Math.PI * radius * radius;
+        return Math.PI * (radius * radius);
     }
     public double getRadius() {
         return radius;
