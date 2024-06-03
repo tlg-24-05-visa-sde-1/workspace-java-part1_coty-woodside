@@ -10,7 +10,7 @@ public class Rectangle implements Shape {
     }
     @Override
     public double getArea() {
-        return length * width;
+        return getLength() * getWidth();
     }
     public double getLength() {
         return length;

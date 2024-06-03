@@ -13,7 +13,7 @@ public class ShapeClient {
         double totalArea = 0;
         for (Shape shape : shapes) {
             double area = shape.getArea();
-            totalArea += area;
+            totalArea += area;  // totalArea = totalArea + area
         }
         System.out.println("Total area: " + totalArea);
     }

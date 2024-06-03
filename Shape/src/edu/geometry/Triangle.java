@@ -9,7 +9,7 @@ public class Triangle implements Shape {
     public Triangle(double sideA, double sideB, double angleC) {
         this.sideA = sideA;
         this.sideB = sideB;
-        this.angleC = angleC;
+        this.angleC = angleC;   // angle must be in radians
     }
 
     public double getArea() {
