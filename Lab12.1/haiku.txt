@@ -1,1 +1,1 @@
-it really doesn't matter if this haiku abides by the rules because we are learning java
+i'm not spending 10 minutes to write haiku - this is a java class'
